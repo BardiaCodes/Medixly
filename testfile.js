@@ -1,5 +1,20 @@
 import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 
-export default function testfile() {
-  return <div></div>;
-}
+const testFile =  () => {
+  return(
+    <View>
+      <Text style={styles.textStyle}>
+        Test
+      </Text>
+    </View>
+  );
+};
+
+const styles = Stylesheet.create({
+  textStyle: {
+    fontSize: 20
+  }
+});
+
+export default testFile;
