@@ -1,1 +1,1 @@
-print("krish smells bad")
+print("jung smells bad")
