@@ -10,7 +10,7 @@ function Detect(props) {
         <View style = {styles.container}> 
             <ImageBackground source = {image} style = {styles.image}>
                 <TouchableOpacity onPress={() => alert("Button pressed")}>
-                    <ImageBackground source={deteectimage} style= {styles.imageD}>
+                    <ImageBackground source={deteectimage} style= {styles.detectStyle}>
                     </ImageBackground>
                 </TouchableOpacity>
             </ImageBackground>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         padding: 20,
     },
-    imageD: {
+    detectStyle: {
 
         aspectRatio: 1, 
         resizeMode: 'contain'
