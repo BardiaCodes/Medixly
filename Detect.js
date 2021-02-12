@@ -2,7 +2,7 @@ import React from 'react';
 import { ImageBackground, SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 // Get the image through url (imgur)
 const image = { uri : "https://i.imgur.com/NLwCJeA.png"};
-const deteectimage = {uri: "https://i.imgur.com/PhHulFx.png"}; 
+const deteectimage = {uri: "https://i.imgur.com/ntJM5VX.png"}; 
 function Detect(props) {
     return (
         //Safe area view for Iphone's, contains all the information
@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        resizeMode: "cover",
-        justifyContent: "center"
+        justifyContent: "center",
+        resizeMode: "contain"
     },
     text: {
         color: "white",
