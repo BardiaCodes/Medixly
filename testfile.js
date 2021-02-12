@@ -1,19 +1,19 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const testFile =  () => {
+const testFile = () => {
   return(
     <View>
       <Text style={styles.textStyle}>
-        Test
+        TestFile
       </Text>
     </View>
   );
 };
 
-const styles = Stylesheet.create({
+const styles = StyleSheet.create({
   textStyle: {
-    fontSize: 20
+    fontSize: 55
   }
 });
 
