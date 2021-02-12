@@ -10,21 +10,20 @@ import {
 	Image,
 } from "react-native";
 // Get the image through url (imgur)
-const button_A = { uri: "https://imgur.com/4SWLLTu" }; // A button
-const button_B = { uri: "https://imgur.com/9CBt642" }; // B button
-const button_C = { uri: "https://imgur.com/bqdan6D" }; // C button
-const button_D = { uri: "https://imgur.com/IvDi5QA" }; // D button
-const button_BACK = { uri: "https://imgur.com/2zC4NGP" }; // Back button
-const bar_FILL = { uri: "https://imgur.com/Y7IFm2h" }; // Texture for filled part of bar
-const bar_BG = { uri: "https://imgur.com/3byPAgm" }; // Texture for background part of bar (unfilled bar)
-const BG = { uri: "https://imgur.com/TakQGCF" }; // Background image
+const button_A = { uri: "https://imgur.com/4SWLLTu.png" }; // A button
+const button_B = { uri: "https://imgur.com/9CBt642.png" }; // B button
+const button_C = { uri: "https://imgur.com/bqdan6D.png" }; // C button
+const button_D = { uri: "https://imgur.com/IvDi5QA.png" }; // D button
+const button_BACK = { uri: "https://imgur.com/2zC4NGP.png" }; // Back button
+const bar_FILL = { uri: "https://imgur.com/Y7IFm2h.png" }; // Texture for filled part of bar
+const bar_BG = { uri: "https://imgur.com/3byPAgm.png" }; // Texture for background part of bar (unfilled bar)
+const BG = { uri: "https://imgur.com/TakQGCF.png" }; // Background image
 function Results(props) {
 	return (
 		//Safe area view for Iphone's, contains all the information
 
 		<View style={styles.container}>
 			<ImageBackground source={BG} style={styles.image}></ImageBackground>
-			<Text>Fortnite</Text>
 		</View>
 	);
 }
