@@ -21,23 +21,25 @@ const BG = { uri: "https://imgur.com/TakQGCF.png" }; // Background image
 function Results(props) {
 	return (
 		//Safe area view for Iphone's, contains all the information
-
-		<View style={styles.container}>
-			<ImageBackground source={BG} style={styles.image}></ImageBackground>
-		</View>
+		<ImageBackground source={BG} style={styles.image}>
+			<BarClass barCategory={button_A}></BarClass>
+			<BarClass barCategory={button_B}></BarClass>
+			<BarClass barCategory={button_C}></BarClass>
+			<BarClass barCategory={button_D}></BarClass>
+		</ImageBackground>
 	);
 }
 
-class barClass {
-	constructor(barCategory, categoryPercentage) {
+class BarClass extends React.Component {
+	constructor(barCategory) {
+		super(barCategory);
 		this.barCategory = barCategory;
-		this.categoryPercentage = categoryPercentage;
+		//this.categoryPercentage = categoryPercentage;
 	}
 	render() {
 		return (
-			<View>
-				<ImageBackground source={bar_BG}></ImageBackground>
-				<Image source={this.barCategory}></Image>
+			<View style={styles.barBackground}>
+				<Image style={styles.barImage} source={button_A}></Image>
 			</View>
 		);
 	}
@@ -67,6 +69,17 @@ const styles = StyleSheet.create({
 	imageD: {
 		aspectRatio: 1,
 		resizeMode: "contain",
+	},
+	barBackground: {
+		backgroundColor: "#EDEDED",
+		marginRight: 30,
+		marginLeft: 30,
+		marginTop: 20,
+		borderRadius: 200,
+	},
+	barImage: {
+		width: 125,
+		height: 125,
 	},
 });
 export default Results;
