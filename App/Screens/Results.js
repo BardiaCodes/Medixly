@@ -7,6 +7,7 @@ import {
 	View,
 	TouchableOpacity,
 	Dimensions,
+	Image,
 } from "react-native";
 // Get the image through url (imgur)
 const button_A = { uri: "https://imgur.com/4SWLLTu" }; // A button
@@ -23,6 +24,7 @@ function Results(props) {
 
 		<View style={styles.container}>
 			<ImageBackground source={BG} style={styles.image}></ImageBackground>
+			<Text>Fortnite</Text>
 		</View>
 	);
 }
@@ -36,6 +38,7 @@ class barClass {
 		return (
 			<View>
 				<ImageBackground source={bar_BG}></ImageBackground>
+				<Image source={this.barCategory}></Image>
 			</View>
 		);
 	}
