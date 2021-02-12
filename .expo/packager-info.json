@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19000,
+  "expoServerNgrokUrl": "https://b9-f8t.banannabomb3.medixly.exp.direct",
+  "packagerNgrokUrl": "https://packager.b9-f8t.banannabomb3.medixly.exp.direct",
+  "ngrokPid": 21572,
+  "packagerPid": null,
+  "webpackServerPort": null
+}
