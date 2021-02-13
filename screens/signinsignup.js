@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 export default function signInSignUp() {
   return (
     <View style={styles.container}>
-    //<Image style={styles.logo} source={require('-')} />
+    <Image style={styles.logo} source={require('-')} />
       <Text style={styles.paragraph}>
           Medixly
       </Text>
