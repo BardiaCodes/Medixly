@@ -1,10 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 import Detect from './Detect';
+import Results from './Results';
+import PastResults from "./PastResults";
 
-export default function App() {
-  return <Detect />;
-}
+const navigator = createStackNavigator({
+  Detect: Detect,
+  Results: Results,
+  PastResults: PastResults
+}, {
+  initialRouteName: "PastResults",
+  defaultNavigationOptions: {
+    title: "Detection App"
+  }
+});
 
-
+export default createAppContainer(navigator);
