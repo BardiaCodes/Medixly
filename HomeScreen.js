@@ -35,11 +35,12 @@ const HomeScreen = () => {
               90 
               <Text style = {styles.test}> Tests Done </Text> 
             </Text>
-            <Image style={{height: 600, width: 300, alignContent: "center" }} source={require('../assets/Shot.png')}  />
+            <Image style={{ height: 100, width: 100 }} source={require('../assets/shot.png')}  />
           </View>
         </View>
       </ImageBackground>
     </SafeAreaView>
+    
   );
 };
 export default HomeScreen;
