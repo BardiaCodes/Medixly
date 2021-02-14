@@ -11,6 +11,7 @@ import {
   Button
 } from 'react-native';
 
+var name = "John Doe";
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -18,7 +19,7 @@ const HomeScreen = () => {
         style={{flex: 1, top: 1}}
         source={require('../assets/homescreenbg.png')}>
        <TouchableOpacity style={styles.btn}>
-        <Image source={require('../assets/menuicon.png')}  style={{marginLeft: 20, marginTop: 13}}/>
+        <Image source={require('../assets/menuicon.png')}  style={styles.menu}/>
         </TouchableOpacity>
         <View style={styles.contentContainer}>
           <View style={styles.welcomeDiv}>
@@ -26,7 +27,7 @@ const HomeScreen = () => {
               👋Hello,
             </Text>
             <Text style={styles.name}>
-              John Doe
+              {name}
             </Text>
             <Text style = {styles.stats}>
               Statistics 
@@ -35,15 +36,13 @@ const HomeScreen = () => {
               90 
               <Text style = {styles.test}> Tests Done </Text> 
             </Text>
-            <Image style={{ height: 100, width: 100 }} source={require('../assets/shot.png')}  />
+            <Image style={{height: 600, width: 300 }} source={require('../assets/Shot.png')}  />
           </View>
         </View>
       </ImageBackground>
     </SafeAreaView>
-    
   );
 };
-export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -94,6 +93,6 @@ const styles = StyleSheet.create({
   },
   test: {
     fontWeight: "normal", 
-  }
+  },
 });
-
+export default HomeScreen;
