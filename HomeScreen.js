@@ -11,7 +11,6 @@ import {
   Button
 } from 'react-native';
 
-var name = "John Doe";
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -19,7 +18,7 @@ const HomeScreen = () => {
         style={{flex: 1, top: 1}}
         source={require('../assets/homescreenbg.png')}>
        <TouchableOpacity style={styles.btn}>
-        <Image source={require('../assets/menuicon.png')}  style={styles.menu}/>
+        <Image source={require('../assets/menuicon.png')}  style={{height: 34, width: 77, marginLeft: 20, marginTop: 13}}/>
         </TouchableOpacity>
         <View style={styles.contentContainer}>
           <View style={styles.welcomeDiv}>
@@ -27,7 +26,7 @@ const HomeScreen = () => {
               👋Hello,
             </Text>
             <Text style={styles.name}>
-              {name}
+              John Doe
             </Text>
             <Text style = {styles.stats}>
               Statistics 
@@ -36,8 +35,10 @@ const HomeScreen = () => {
               90 
               <Text style = {styles.test}> Tests Done </Text> 
             </Text>
-            <Image style={{height: 100, width: 100 }} source={require('../assets/shot.png')}  />
+            
+            <Image style={{ height: 94, width: 90 }} source={require('../assets/shot.png')}  />
           </View>
+          
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -93,6 +94,6 @@ const styles = StyleSheet.create({
   },
   test: {
     fontWeight: "normal", 
-  },
+  }
 });
 export default HomeScreen;
