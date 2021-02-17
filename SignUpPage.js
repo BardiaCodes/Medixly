@@ -19,11 +19,12 @@ export default function App() {
   const [name, setName] = useState("eg. John Doe");
 
   return (
-    <ImageBackground
-      style={styles.background}
-      source={require("./assets/background.png")}
-    >
+    <View style={styles.container}>
       <View style={styles.heading}>
+        <Image
+          source={require("./assets/medixlylogo.png")}
+          style={styles.logo}
+        />
         <Text style={styles.SignupHeader}>Sign Up</Text>
       </View>
 
@@ -72,18 +73,11 @@ export default function App() {
           </View>
         </TouchableOpacity>
       </View>
-    </ImageBackground>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -99,7 +93,7 @@ const styles = StyleSheet.create({
   heading: {
     flex: 0.5,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-around",
     alignSelf: "flex-start",
   },
   input: {
@@ -134,7 +128,7 @@ const styles = StyleSheet.create({
     right: 20,
   },
   SignupHeader: {
-    top: 30,
+    bottom: 20,
     left: 30,
     fontSize: 70,
     fontWeight: "bold",
@@ -179,5 +173,10 @@ const styles = StyleSheet.create({
   },
   space2: {
     height: 20,
+  },
+  logo: {
+    left: 150,
+    top: 60,
+    resizeMode: "contain",
   },
 });
