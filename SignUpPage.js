@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -7,6 +6,7 @@ import {
   ImageBackground,
   Image,
   TextInput,
+  TouchableOpacity,
 } from "react-native";
 
 // subtext style is the name, email, and password outside the buttons.
@@ -41,7 +41,7 @@ export default function App() {
         <TextInput
           style={styles.input}
           placeholder="example@gmail.com"
-          onSelectionChange={(val) => setName(val)}
+          onChangeText={(val) => setEmail(val)}
         />
       </View>
 
@@ -50,25 +50,27 @@ export default function App() {
         <TextInput
           style={styles.input}
           placeholder="9+ Characters"
-          onSelectionChange={(val) => setName(val)}
+          onSelectionChange={(val) => setPassword(val)}
         />
       </View>
 
       <View style={styles.space}></View>
 
-      <View>
+      <TouchableOpacity onPress={() => console.log({ email })}>
         <View style={styles.signup}>
           <Text style={styles.SignUpButton}>Sign Up</Text>
         </View>
-      </View>
+      </TouchableOpacity>
 
       <View style={styles.space2}></View>
 
       <View style={styles.placeholder}>
         <Text style={styles.smalltext}>Already have an account?</Text>
-        <View style={styles.signin}>
-          <Text style={styles.SignInButton}>Sign In</Text>
-        </View>
+        <TouchableOpacity>
+          <View style={styles.signin}>
+            <Text style={styles.SignInButton}>Sign In</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
