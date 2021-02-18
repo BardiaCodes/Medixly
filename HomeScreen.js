@@ -10,7 +10,8 @@ import {
   TouchableOpacity,
   Button
 } from 'react-native';
-
+var test= 90;
+var diagnoses= 27;
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -31,19 +32,24 @@ const HomeScreen = () => {
             <Text style = {styles.stats}>
               Statistics 
             </Text>
-            <Text style = {styles.num}>
-              90 
-              <Text style = {styles.test}> Tests Done </Text> 
-            </Text>
             
-            <Image style={{ height: 94, width: 90 }} source={require('../assets/shot.png')}  />
+            <View style= {{backgroundColor: "#EDEDED", height: 150, padding: 1, }}>
+            <Text style = {styles.num}>
+              {test}
+              <Text style = {styles.test}> Tests Done </Text> 
+              <Text style = {{marginLeft: 50}} > {diagnoses} </Text>
+              <Text style = {styles.test}> diagnoses given </Text>
+            </Text>
+            <Image style={{ height: 94, width: 90 }} source={require('../assets/shot.png')} />
+            <Image style={{ height: 176, width: 176 }} source={require('../assets/image9.png')} />
+            </View>
           </View>
-          
         </View>
       </ImageBackground>
     </SafeAreaView>
   );
 };
+export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -94,6 +100,5 @@ const styles = StyleSheet.create({
   },
   test: {
     fontWeight: "normal", 
-  }
+  },
 });
-export default HomeScreen;
