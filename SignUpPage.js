@@ -9,9 +9,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-// subtext style is the name, email, and password outside the buttons.
-// subtext2 style is the name, email, and password examples inside the buttons.
-
 export default function App() {
   //States
   const [email, setEmail] = useState("example@gmail.com");
@@ -19,57 +16,58 @@ export default function App() {
   const [name, setName] = useState("eg. John Doe");
 
   return (
+    //Background and Heading
     <View style={styles.container}>
       <View style={styles.heading}>
         <Image
           source={require("./assets/medixlylogo.png")}
           style={styles.logo}
         />
-        <Text style={styles.SignupHeader}>Sign Up</Text>
+        <Text style={styles.SignUpHeader}>Sign Up</Text>
       </View>
-
+      {/* Name Input Field */}
       <View>
-        <Text style={styles.subtext}>Name</Text>
+        <Text style={styles.labeltext}>Name</Text>
         <TextInput
           style={styles.input}
           placeholder="e.g. John Doe"
-          onSelectionChange={(val) => setName(val)}
+          onChangeText={(val) => setName(val)}
         />
       </View>
-
+      {/* Email Input Field */}
       <View>
-        <Text style={styles.subtext}>Email</Text>
+        <Text style={styles.labeltext}>Email</Text>
         <TextInput
           style={styles.input}
           placeholder="example@gmail.com"
           onChangeText={(val) => setEmail(val)}
         />
       </View>
-
+      {/* Password Input Field */}
       <View>
-        <Text style={styles.subtext}>Password</Text>
+        <Text style={styles.labeltext}>Password</Text>
         <TextInput
           style={styles.input}
           placeholder="9+ Characters"
-          onSelectionChange={(val) => setPassword(val)}
+          onChangeText={(val) => setPassword(val)}
         />
       </View>
 
       <View style={styles.space}></View>
-
+      {/* Sign Up Button */}
       <TouchableOpacity onPress={() => console.log({ email })}>
-        <View style={styles.signup}>
-          <Text style={styles.SignUpButton}>Sign Up</Text>
+        <View style={styles.SignUpButton}>
+          <Text style={styles.SignUpText}>Sign Up</Text>
         </View>
       </TouchableOpacity>
 
       <View style={styles.space2}></View>
-
+      {/* Sign In Button */}
       <View style={styles.placeholder}>
         <Text style={styles.smalltext}>Already have an account?</Text>
         <TouchableOpacity>
-          <View style={styles.signin}>
-            <Text style={styles.SignInButton}>Sign In</Text>
+          <View style={styles.SignInButton}>
+            <Text style={styles.SignInText}>Sign In</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -107,7 +105,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 25,
   },
-  signup: {
+  SignUpButton: {
     backgroundColor: "#418dff",
     width: 350,
     height: 95,
@@ -116,7 +114,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     bottom: 15,
   },
-  signin: {
+  SignInButton: {
     alignSelf: "flex-end",
     alignItems: "center",
     justifyContent: "center",
@@ -127,7 +125,7 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     right: 20,
   },
-  SignupHeader: {
+  SignUpHeader: {
     bottom: 20,
     left: 30,
     fontSize: 70,
@@ -139,17 +137,11 @@ const styles = StyleSheet.create({
 
     // fontStyle: "Montseratt",
   },
-  subtext: {
+  labeltext: {
     fontSize: 20,
     color: "#000000",
     // fontStyle: "Questrial",
     left: 10,
-  },
-  subtext2: {
-    fontSize: 20,
-    color: "#000000",
-    // fontStyle: "Questrial",
-    opacity: 56,
   },
   smalltext: {
     fontSize: 15,
@@ -159,13 +151,13 @@ const styles = StyleSheet.create({
     bottom: 25,
     left: 35,
   },
-  SignUpButton: {
+  SignUpText: {
     fontSize: 30,
     color: "#fff",
     // fontStyle: "Montseratt",
     fontWeight: "500",
   },
-  SignInButton: {
+  SignInText: {
     fontSize: 20,
     color: "#000",
     // fontStyle: "Montserrat",
