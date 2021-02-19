@@ -10,7 +10,8 @@ import {
   TouchableOpacity,
   Button
 } from 'react-native';
-
+var test= 90;
+var diagnoses= 27;
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -18,7 +19,7 @@ const HomeScreen = () => {
         style={{flex: 1, top: 1}}
         source={require('../assets/homescreenbg.png')}>
        <TouchableOpacity style={styles.btn}>
-        <Image source={require('../assets/menuicon.png')}  style={{marginLeft: 20, marginTop: 13}}/>
+        <Image source={require('../assets/menuicon.png')}  style={{height: 34, width: 77, marginLeft: 20, marginTop: 13}}/>
         </TouchableOpacity>
         <View style={styles.contentContainer}>
           <View style={styles.welcomeDiv}>
@@ -31,11 +32,17 @@ const HomeScreen = () => {
             <Text style = {styles.stats}>
               Statistics 
             </Text>
+            
+            <View style= {{backgroundColor: "#EDEDED", height: 150, padding: 1, }}>
             <Text style = {styles.num}>
-              90 
+              {test}
               <Text style = {styles.test}> Tests Done </Text> 
+              <Text style = {{marginLeft: 50}} > {diagnoses} </Text>
+              <Text style = {styles.test}> diagnoses given </Text>
             </Text>
-            <Image style={{height: 600, width: 300, alignContent: "center" }} source={require('../assets/Shot.png')}  />
+            <Image style={{ height: 94, width: 90 }} source={require('../assets/shot.png')} />
+            <Image style={{ height: 176, width: 176 }} source={require('../assets/image9.png')} />
+            </View>
           </View>
         </View>
       </ImageBackground>
@@ -93,6 +100,5 @@ const styles = StyleSheet.create({
   },
   test: {
     fontWeight: "normal", 
-  }
+  },
 });
-
