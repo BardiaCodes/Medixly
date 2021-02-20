@@ -41,13 +41,18 @@ const HomeScreen = () => {
               <Text>  {diagnoses} </Text>
               <Text style = {styles.test}>diagnoses given </Text>
             </Text>
-            <Image style={{height: 600, width: 300 }} source={require('../assets/shot.png')}  />
             <View style = {{flex:1, flexDirection: "row"}}>
             <Image style={{ marginLeft: 20, height: 94, width: 90 }} source={require('../assets/shot.png')} />
             <Image style={{ marginLeft: 50, height: 94, width: 90 }} source={require('../assets/image9.png')} />
             </View>
             </View>
-            <Text style = {{alignSelf: "center", fontSize: 30, color: '#474747', fontWeight: 'bold', }}> What do you need?</Text>
+            <Text style = {{textAlign: "left", fontSize: 30, color: '#474747', fontWeight: 'bold'}}> What do you need?</Text>
+            <View style = {{flex:1, flexDirection: "row"}}>
+            <View style = {styles.border}>
+            <Image style = {{alignSelf: 'center', height: 97.3, width: 84.6}} source = {require('../assets/Identification.png')}/>
+            <Text style = {{marginLeft:15 , fontSize: 15}}> Identification </Text>
+            </View>
+            </View>
           </View>
         </View>
       </ImageBackground>
@@ -99,7 +104,14 @@ const styles = StyleSheet.create({
   },
   test: {
     fontWeight: "normal",
-
   },
+  border: {
+    marginLeft: 10, 
+    backgroundColor: "#EDEDED", 
+    width: 120, 
+    height: 130, 
+    padding: 1, 
+    borderRadius: 20
+  }
 });
 export default HomeScreen;
