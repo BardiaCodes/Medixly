@@ -20,7 +20,7 @@ const HomeScreen = () => {
         style={{flex: 1, top: 1}}
         source={require('../assets/homescreenbg.png')}>
        <TouchableOpacity style={styles.btn}>
-        <Image source={require('../assets/menuicon.png')}  style={{height: 34, width: 77, marginLeft: 20, marginTop: 13}}/>
+        <Image source={require('../assets/menuicon.png')}  style={{height: 17, width: 38.5, marginLeft: 20, marginTop: 30}}/>
         </TouchableOpacity>
         <View style={styles.contentContainer}>
           <View style={styles.welcomeDiv}>
@@ -93,12 +93,10 @@ const styles = StyleSheet.create({
     textAlign: 'left',    
   },
   stats: {
-    marginTop: 15,
-    fontSize: 40,
-    color: '#474747',
-    fontWeight: 'bold',    
-    alignSelf: "center",
-
+    textAlign: "left", 
+    fontSize: 30, color: '#474747',
+     fontWeight: 'bold', 
+     paddingLeft: 10
   },
   num: {
     marginTop: 10, 
