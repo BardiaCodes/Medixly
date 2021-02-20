@@ -43,7 +43,7 @@ const HomeScreen = () => {
             </Text>
             <View style = {{flex:1, flexDirection: "row"}}>
             <Image style={{ marginLeft: 20, height: 94, width: 90 }} source={require('../assets/shot.png')} />
-            <Image style={{ marginLeft: 50, height: 94, width: 90 }} source={require('../assets/image9.png')} />
+            <Image style={{ marginLeft: 50, height: 100, width: 90 }} source={require('../assets/image9.png')} />
             </View>
             </View>
             <Text style = {{textAlign: "left", fontSize: 30, color: '#474747', fontWeight: 'bold'}}> What do you need?</Text>
@@ -51,6 +51,10 @@ const HomeScreen = () => {
             <View style = {styles.border}>
             <Image style = {{alignSelf: 'center', height: 97.3, width: 84.6}} source = {require('../assets/Identification.png')}/>
             <Text style = {{marginLeft:15 , fontSize: 15}}> Identification </Text>
+            </View>
+            <View style = {styles.border}>
+            <Image style = {{marginTop: 15, marginLeft: 20, alignSelf: 'center', height: 79.5, width:79.5}} source = {require('../assets/Consultation.png')}/>
+            <Text style = {{marginTop: 2, marginLeft:15 , fontSize: 15}}> Consultation </Text>
             </View>
             </View>
           </View>
