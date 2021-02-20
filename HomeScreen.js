@@ -48,14 +48,14 @@ const HomeScreen = () => {
             </View>
             <Text style = {{textAlign: "left", fontSize: 30, color: '#474747', fontWeight: 'bold'}}> What do you need?</Text>
             <View style = {{flex:1, flexDirection: "row"}}>
-            <View style = {styles.border}>
+            <TouchableOpacity style = {styles.border}>
             <Image style = {{alignSelf: 'center', height: 97.3, width: 84.6}} source = {require('../assets/Identification.png')}/>
             <Text style = {{marginLeft:15 , fontSize: 15}}> Identification </Text>
-            </View>
-            <View style = {styles.border}>
+            </TouchableOpacity>
+            <TouchableOpacity style = {styles.border}>
             <Image style = {{marginTop: 15, marginLeft: 20, alignSelf: 'center', height: 79.5, width:79.5}} source = {require('../assets/Consultation.png')}/>
             <Text style = {{marginTop: 2, marginLeft:15 , fontSize: 15}}> Consultation </Text>
-            </View>
+            </TouchableOpacity>
             </View>
           </View>
         </View>
