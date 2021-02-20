@@ -10,43 +10,45 @@ import {
 	Image,
 } from "react-native";
 // Get the image through url (imgur)
-const button_A = { uri: "https://imgur.com/4SWLLTu.png" }; // A button
-const button_B = { uri: "https://imgur.com/9CBt642.png" }; // B button
-const button_C = { uri: "https://imgur.com/bqdan6D.png" }; // C button
-const button_D = { uri: "https://imgur.com/IvDi5QA.png" }; // D button
+const aPercent = 50; // Asymetry percentage
+const bPercent = 20; // Border percentage
+const cPercent = 16; // Color percentage
+const dPercent = 45; // Diameter percentage
 const button_BACK = { uri: "https://imgur.com/2zC4NGP.png" }; // Back button
 const bar_FILL = { uri: "https://imgur.com/Y7IFm2h.png" }; // Texture for filled part of bar
 const bar_BG = { uri: "https://imgur.com/3byPAgm.png" }; // Texture for background part of bar (unfilled bar)
 const BG = { uri: "https://imgur.com/TakQGCF.png" }; // Background image
-const barPercentage = 0;
-const barProption = 2.29 * barPercentage;
 function Results(props) {
 	return (
 		//Safe area view for Iphone's, contains all the information
 		<ImageBackground source={BG} style={styles.image}>
 			<View style={styles.barBackground}>
-				<View style={styles.barFill}></View>
+				<View style={styles.barFill} width={125 + 2.29 * aPercent}></View>
 				<View style={styles.barImage}>
 					<Text style={styles.text}>A</Text>
 				</View>
+				<Text style={styles.textPercentageReadouts}>Asymetry {aPercent}%</Text>
 			</View>
 			<View style={styles.barBackground}>
-				<View style={styles.barFill}></View>
+				<View style={styles.barFill} width={125 + 2.29 * bPercent}></View>
 				<View style={styles.barImage}>
 					<Text style={styles.text}>B</Text>
 				</View>
+				<Text style={styles.textPercentageReadouts}>Border {bPercent}%</Text>
 			</View>
 			<View style={styles.barBackground}>
-				<View style={styles.barFill}></View>
+				<View style={styles.barFill} width={125 + 2.29 * cPercent}></View>
 				<View style={styles.barImage}>
 					<Text style={styles.text}>C</Text>
 				</View>
+				<Text style={styles.textPercentageReadouts}>Color {cPercent}%</Text>
 			</View>
 			<View style={styles.barBackground}>
-				<View style={styles.barFill}></View>
+				<View style={styles.barFill} width={125 + 2.29 * dPercent}></View>
 				<View style={styles.barImage}>
 					<Text style={styles.text}>D</Text>
 				</View>
+				<Text style={styles.textPercentageReadouts}>Diameter {dPercent}%</Text>
 			</View>
 		</ImageBackground>
 	);
@@ -83,6 +85,12 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		justifyContent: "center",
 	},
+	textPercentageReadouts: {
+		color: "#0047B1",
+		fontSize: 15,
+		textAlignVertical: "center",
+		padding: 10,
+	},
 	title: {
 		color: "white",
 		fontSize: 24,
@@ -100,6 +108,7 @@ const styles = StyleSheet.create({
 		height: 125,
 		borderRadius: 200,
 		flexDirection: "row",
+		alignItems: "center",
 	},
 	barImage: {
 		backgroundColor: "#418DFF",
@@ -116,7 +125,6 @@ const styles = StyleSheet.create({
 		backgroundColor: "white",
 		borderColor: "#418DFF",
 		height: 125,
-		width: 125 + barProption,
 		borderWidth: 5,
 		borderRadius: 200,
 	},
