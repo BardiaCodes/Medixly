@@ -8,9 +8,11 @@ import {
   SafeAreaView,
   ImageBackground,
   TouchableOpacity,
-  Button
+  Button,  
 } from 'react-native';
-
+var test= 90;
+var diagnoses= "     27";
+var name = "John Doe";
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -18,7 +20,7 @@ const HomeScreen = () => {
         style={{flex: 1, top: 1}}
         source={require('../assets/homescreenbg.png')}>
        <TouchableOpacity style={styles.btn}>
-        <Image source={require('../assets/menuicon.png')}  style={{marginLeft: 20, marginTop: 13}}/>
+        <Image source={require('../assets/menuicon.png')}  style={{height: 34, width: 77, marginLeft: 20, marginTop: 13}}/>
         </TouchableOpacity>
         <View style={styles.contentContainer}>
           <View style={styles.welcomeDiv}>
@@ -26,24 +28,31 @@ const HomeScreen = () => {
               👋Hello,
             </Text>
             <Text style={styles.name}>
-              John Doe
+              {name}
             </Text>
             <Text style = {styles.stats}>
               Statistics 
             </Text>
+            
+            <View style= {{marginLeft: 10, backgroundColor: "#EDEDED", width: 280, height: 150, padding: 1, borderRadius: 20 }}>
             <Text style = {styles.num}>
-              90 
+              {test}
               <Text style = {styles.test}> Tests Done </Text> 
+              <Text>  {diagnoses} </Text>
+              <Text style = {styles.test}>diagnoses given </Text>
             </Text>
-            <Image style={{ height: 100, width: 100 }} source={require('../assets/shot.png')}  />
+            <View style = {{flex:1, flexDirection: "row"}}>
+            <Image style={{ marginLeft: 20, height: 94, width: 90 }} source={require('../assets/shot.png')} />
+            <Image style={{ marginLeft: 50, height: 94, width: 90 }} source={require('../assets/image9.png')} />
+            </View>
+            </View>
+            <Text style = {{alignSelf: "center", fontSize: 30, color: '#474747', fontWeight: 'bold', }}> What do you need?</Text>
           </View>
         </View>
       </ImageBackground>
     </SafeAreaView>
-    
   );
 };
-export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -62,11 +71,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',    
     textAlign: 'left',    
   },
-  shadow: {
-  shadowColor: '#202020',
-  shadowOffset: {width: 0, height: 0},
-  shadowRadius: 5,
- },
  welcomeDiv: {
    marginTop: 15,
  },
@@ -79,21 +83,22 @@ const styles = StyleSheet.create({
     textAlign: 'left',    
   },
   stats: {
-    marginTop: 30,
+    marginTop: 15,
     fontSize: 40,
-    color: 'Black',
-    fontStyle: "Montserrat",
-    alignSelf: "left",
+    color: '#474747',
+    fontWeight: 'bold',    
+    alignSelf: "center",
 
   },
   num: {
     marginTop: 10, 
     marginLeft: 10,
     fontSize: 15,
-    fontWeight: "bold", 
+    fontWeight: "bold",
   },
   test: {
-    fontWeight: "normal", 
-  }
-});
+    fontWeight: "normal",
 
+  },
+});
+export default HomeScreen;
