@@ -18,33 +18,35 @@ const button_BACK = { uri: "https://imgur.com/2zC4NGP.png" }; // Back button
 const bar_FILL = { uri: "https://imgur.com/Y7IFm2h.png" }; // Texture for filled part of bar
 const bar_BG = { uri: "https://imgur.com/3byPAgm.png" }; // Texture for background part of bar (unfilled bar)
 const BG = { uri: "https://imgur.com/TakQGCF.png" }; // Background image
+const barPercentage = 0;
+const barProption = 2.29 * barPercentage;
 function Results(props) {
 	return (
 		//Safe area view for Iphone's, contains all the information
 		<ImageBackground source={BG} style={styles.image}>
 			<View style={styles.barBackground}>
+				<View style={styles.barFill}></View>
 				<View style={styles.barImage}>
 					<Text style={styles.text}>A</Text>
 				</View>
-				<Image source={bar_FILL}></Image>
 			</View>
 			<View style={styles.barBackground}>
+				<View style={styles.barFill}></View>
 				<View style={styles.barImage}>
 					<Text style={styles.text}>B</Text>
 				</View>
-				<Image source={bar_FILL}></Image>
 			</View>
 			<View style={styles.barBackground}>
+				<View style={styles.barFill}></View>
 				<View style={styles.barImage}>
 					<Text style={styles.text}>C</Text>
 				</View>
-				<Image source={bar_FILL}></Image>
 			</View>
 			<View style={styles.barBackground}>
+				<View style={styles.barFill}></View>
 				<View style={styles.barImage}>
 					<Text style={styles.text}>D</Text>
 				</View>
-				<Image source={bar_FILL}></Image>
 			</View>
 		</ImageBackground>
 	);
@@ -95,16 +97,28 @@ const styles = StyleSheet.create({
 		marginRight: 30,
 		marginLeft: 30,
 		marginTop: 20,
+		height: 125,
 		borderRadius: 200,
-		justifyContent: "center",
+		flexDirection: "row",
 	},
 	barImage: {
 		backgroundColor: "#418DFF",
+		position: "absolute",
+		top: 0,
+		left: 0,
 		width: 125,
 		height: 125,
 		borderRadius: 200,
 		alignItems: "center",
 		justifyContent: "center",
+	},
+	barFill: {
+		backgroundColor: "white",
+		borderColor: "#418DFF",
+		height: 125,
+		width: 125 + barProption,
+		borderWidth: 5,
+		borderRadius: 200,
 	},
 });
 export default Results;
