@@ -30,16 +30,16 @@ function Results(props) {
 	);
 }
 
-class BarClass extends React.Component {
-	constructor(barCategory) {
-		super(barCategory);
+export default class BarClass extends React.Component {
+	constructor(props) {
+		super(props);
 		this.barCategory = barCategory;
 		//this.categoryPercentage = categoryPercentage;
 	}
 	render() {
 		return (
 			<View style={styles.barBackground}>
-				<Image style={styles.barImage} source={button_A}></Image>
+				<Image style={styles.barImage} source={this.props.barCategory}></Image>
 			</View>
 		);
 	}
