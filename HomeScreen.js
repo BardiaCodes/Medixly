@@ -20,7 +20,7 @@ const HomeScreen = () => {
         style={{flex: 1, top: 1}}
         source={require('../assets/homescreenbg.png')}>
        <TouchableOpacity style={styles.btn}>
-        <Image source={require('../assets/menuicon.png')}  style={{height: 34, width: 77, marginLeft: 20, marginTop: 13}}/>
+        <Image source={require('../assets/menuicon.png')}  style={{height: 17, width: 38.5, marginLeft: 20, marginTop: 30}}/>
         </TouchableOpacity>
         <View style={styles.contentContainer}>
           <View style={styles.welcomeDiv}>
@@ -43,10 +43,20 @@ const HomeScreen = () => {
             </Text>
             <View style = {{flex:1, flexDirection: "row"}}>
             <Image style={{ marginLeft: 20, height: 94, width: 90 }} source={require('../assets/shot.png')} />
-            <Image style={{ marginLeft: 50, height: 94, width: 90 }} source={require('../assets/image9.png')} />
+            <Image style={{ marginLeft: 50, height: 100, width: 90 }} source={require('../assets/image9.png')} />
             </View>
             </View>
-            <Text style = {{alignSelf: "center", fontSize: 30, color: '#474747', fontWeight: 'bold', }}> What do you need?</Text>
+            <Text style = {{textAlign: "left", fontSize: 30, color: '#474747', fontWeight: 'bold'}}> What do you need?</Text>
+            <View style = {{flex:1, flexDirection: "row"}}>
+            <TouchableOpacity style = {styles.border}>
+            <Image style = {{alignSelf: 'center', height: 97.3, width: 84.6}} source = {require('../assets/Identification.png')}/>
+            <Text style = {{marginLeft:15 , fontSize: 15}}> Identification </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style = {styles.border}>
+            <Image style = {{marginTop: 15, marginLeft: 20, alignSelf: 'center', height: 79.5, width:79.5}} source = {require('../assets/Consultation.png')}/>
+            <Text style = {{marginTop: 2, marginLeft:15 , fontSize: 15}}> Consultation </Text>
+            </TouchableOpacity>
+            </View>
           </View>
         </View>
       </ImageBackground>
@@ -83,12 +93,10 @@ const styles = StyleSheet.create({
     textAlign: 'left',    
   },
   stats: {
-    marginTop: 15,
-    fontSize: 40,
-    color: '#474747',
-    fontWeight: 'bold',    
-    alignSelf: "center",
-
+    textAlign: "left", 
+    fontSize: 30, color: '#474747',
+     fontWeight: 'bold', 
+     paddingLeft: 10
   },
   num: {
     marginTop: 10, 
@@ -98,7 +106,14 @@ const styles = StyleSheet.create({
   },
   test: {
     fontWeight: "normal",
-
   },
+  border: {
+    marginLeft: 10, 
+    backgroundColor: "#EDEDED", 
+    width: 120, 
+    height: 130, 
+    padding: 1, 
+    borderRadius: 20
+  }
 });
 export default HomeScreen;
