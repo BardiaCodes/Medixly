@@ -9,7 +9,7 @@ export default function signInSignUp() {
           Medixly
       </Text>
       <TouchableHighlight onPress={() => console.log("Image tapped")}>
-        <view style={{ width: 200, height: 70, }}></view>/view>
+        <view style={{ width: 200, height: 70, }}></view>
       </TouchableHighlight>
       
     </View>
