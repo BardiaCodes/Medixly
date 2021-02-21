@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, TouchableHighlight, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 export default function signInSignUp() {
   return (
@@ -8,6 +8,9 @@ export default function signInSignUp() {
       <Text style={styles.paragraph}>
           Medixly
       </Text>
+      <TouchableHighlight onPress={() => console.log("Image tapped")}>
+        <view style={{ width: 200, height: 70, }}></view>/view>
+      </TouchableHighlight>
       
     </View>
   );
