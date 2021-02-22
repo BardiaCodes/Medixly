@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
   smolText: {
     color: "#cccccc",
     fontSize: 10,
+    marginTop: 300,
     position: "absolute",
   },
   title: {
