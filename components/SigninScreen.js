@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -9,11 +9,15 @@ import {
 } from "react-native";
 
 export default function App() {
+  //States
+  const [email, setEmail] = useState("example@gmail.com");
+  const [password, setPassword] = useState("9+ Characters");
+
   return (
     <View style={styles.container}>
       <View style={styles.heading}>
         <Image
-          source={require("./assets/medixlylogo.png")}
+          source={require("../assets/medixlylogo.png")}
           style={styles.logo}
         />
         <Text style={styles.LogInHeader}>Log In</Text>
