@@ -9,7 +9,7 @@ import {
   Dimensions,
   Image,
 } from "react-native";
-import PastResultsBar from "./components/PastResultsBar";
+import PastResultsBar from "./App/Components/PastResultsBar";
 
 const button_BACK = { uri: "https://imgur.com/2zC4NGP.png" }; // Back button
 const bar_FILL = { uri: "https://imgur.com/Y7IFm2h.png" }; // Texture for filled part of bar

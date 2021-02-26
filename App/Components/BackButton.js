@@ -43,12 +43,23 @@ const Arrow = ({ thickness, color, size, width, height, left, top }) => {
 			position: "absolute",
 			top: height * 0.4,
 		},
+		backButton: {
+			backgroundColor: "white",
+			borderColor: "white",
+			height: 60,
+			width: 125,
+			borderWidth: 1,
+			borderRadius: 200,
+			bottom: 10,
+			left: 20,
+			position: "absolute",
+		},
 	});
 
 	return (
 		<View style={{ zIndex: 999 }}>
-			<View style={styles.container}>
-				<View style={styles.backButton}>
+			<View style={styles.backButton}>
+				<View style={styles.container}>
 					<View style={styles.arrowHead1} />
 					<View style={styles.arrowHead2} />
 					<View style={styles.arrowTail} />
