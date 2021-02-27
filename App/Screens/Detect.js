@@ -33,18 +33,10 @@ function Detect(props) {
                         <Image source = { button_BACK } style = {styles.backButton} />    
                     </TouchableOpacity>
                 </View>
-                <View style = {styles.detectView}>
-                    <Camera
-                      ref={ref => {
-                       this.camera = ref;
-                    }} type = {type}>
-                    </Camera>
+                <View style = {styles.detectView}> 
                     <TouchableOpacity style = {styles.button} onPress = {() => {
-                        snap = async () => {
-                          if (this.camera) {
-                            let photo = await this.camera.takePictureAsync();
-                          }
-                        };
+                       <Camera style = {styles.camera} type = {type}> //Doesn't pop up for some reason
+                       </Camera>
                       }}>
                       <Image source={deteectimage} style= {styles.imageD}>
                       </Image>
