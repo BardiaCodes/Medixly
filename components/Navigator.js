@@ -43,21 +43,21 @@ const TabNavigator = createMaterialBottomTabNavigator(
         ),
       },
     },
-    Detect: {
-      screen: Detect,
-      navigationOptions: {
-        tabBarLabel: "Detect",
-        tabBarIcon: ({ tintColor }) => (
-          <View>
-            <Icon
-              style={[{ color: tintColor }]}
-              size={25}
-              name={"camera-outline"}
-            />
-          </View>
-        ),
-      },
-    },
+    // Detect: {
+    //   screen: Detect,
+    //   navigationOptions: {
+    //     tabBarLabel: "Detect",
+    //     tabBarIcon: ({ tintColor }) => (
+    //       <View>
+    //         <Icon
+    //           style={[{ color: tintColor }]}
+    //           size={25}
+    //           name={"camera-outline"}
+    //         />
+    //       </View>
+    //     ),
+    //   },
+    // },
   },
   // Styles of bottom tab navigator
   {
