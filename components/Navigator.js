@@ -19,7 +19,11 @@ const TabNavigator = createMaterialBottomTabNavigator(
         tabBarLabel: "Home",
         tabBarIcon: ({ tintColor }) => (
           <View>
-            <Icon style={[{ color: tintColor }]} size={25} name={"ios-home"} />
+            <Icon
+              style={[{ color: tintColor }]}
+              size={25}
+              name={"home-outline"}
+            />
           </View>
         ),
       },
