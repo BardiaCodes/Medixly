@@ -43,6 +43,9 @@ const TabNavigator = createMaterialBottomTabNavigator(
         ),
       },
     },
+    //Results: {
+    //screen:
+    //},
     // Detect: {
     //   screen: Detect,
     //   navigationOptions: {
