@@ -52,7 +52,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
     //            <Icon
     //              style={[{ color: tintColor }]}
     //              size={25}
-    //              name={"clipboard-outline"}
+    //              name={"clipboard"}
     //            />
     //          </View>
     //        ),
