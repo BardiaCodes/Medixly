@@ -43,9 +43,21 @@ const TabNavigator = createMaterialBottomTabNavigator(
         ),
       },
     },
-    //Results: {
-    //screen:
-    //},
+    //    Results: {
+    //      screen: ResultsScreen,
+    //      navigationOptions: {
+    //        tabBarLabel: "Results",
+    //        tabBarIcon: ({ tintColor }) => (
+    //          <View>
+    //            <Icon
+    //              style={[{ color: tintColor }]}
+    //              size={25}
+    //              name={"log-in-outline"}
+    //            />
+    //          </View>
+    //        ),
+    //      },
+    //    },
     // Detect: {
     //   screen: Detect,
     //   navigationOptions: {
