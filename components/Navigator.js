@@ -19,7 +19,11 @@ const TabNavigator = createMaterialBottomTabNavigator(
         tabBarLabel: "Home",
         tabBarIcon: ({ tintColor }) => (
           <View>
-            <Icon style={[{ color: tintColor }]} size={25} name={"ios-home"} />
+            <Icon
+              style={[{ color: tintColor }]}
+              size={25}
+              name={"home-outline"}
+            />
           </View>
         ),
       },
@@ -33,12 +37,42 @@ const TabNavigator = createMaterialBottomTabNavigator(
             <Icon
               style={[{ color: tintColor }]}
               size={25}
-              name={"ios-settings"}
+              name={"log-in-outline"}
             />
           </View>
         ),
       },
     },
+    //    Results: {
+    //      screen: ResultsScreen,
+    //      navigationOptions: {
+    //        tabBarLabel: "Results",
+    //        tabBarIcon: ({ tintColor }) => (
+    //          <View>
+    //            <Icon
+    //              style={[{ color: tintColor }]}
+    //              size={25}
+    //              name={"clipboard"}
+    //            />
+    //          </View>
+    //        ),
+    //      },
+    //    },
+    // Detect: {
+    //   screen: Detect,
+    //   navigationOptions: {
+    //     tabBarLabel: "Detect",
+    //     tabBarIcon: ({ tintColor }) => (
+    //       <View>
+    //         <Icon
+    //           style={[{ color: tintColor }]}
+    //           size={25}
+    //           name={"camera-outline"}
+    //         />
+    //       </View>
+    //     ),
+    //   },
+    // },
   },
   // Styles of bottom tab navigator
   {
