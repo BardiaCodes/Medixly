@@ -3,10 +3,10 @@ import { createStackNavigator } from "react-navigation-stack";
 import Detect from "./App/Screens/Detect";
 import Results from "./App/Screens/Results";
 import PastResults from "./App/Screens/PastResults";
-import * as firebase from "firebase";
+import firebase from 'firebase/app';
 import { firebaseConfig } from "./config";
-import React from "react";
-import * as Google from "expo-google-app-auth";
+import React, {Component} from 'react';
+import * as GoogleSignIn from 'expo-google-sign-in';
 import { Button } from "react-native";
 
 firebase.initializeApp(firebaseConfig);

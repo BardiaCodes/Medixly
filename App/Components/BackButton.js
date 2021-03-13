@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from 'react';
 import { StyleSheet, View } from "react-native";
 
 // Code for back button arrow

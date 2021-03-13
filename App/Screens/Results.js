@@ -9,8 +9,8 @@ import {
   Dimensions,
   Image,
 } from "react-native";
-import Arrow from "./App/Components/BackButton";
-import ResultBar from "./App/Components/ResultsBar";
+ import Arrow from "../Components/BackButton";
+import ResultBar from "../Components/ResultsBar";
 const BG = { uri: "https://imgur.com/TakQGCF.png" }; // Background image
 function Results(props) {
   return (

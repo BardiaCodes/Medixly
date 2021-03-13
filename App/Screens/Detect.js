@@ -9,7 +9,7 @@ import {
   Dimensions,
   Image,
 } from "react-native";
-import Arrow from "./App/Components/BackButton";
+ import Arrow from "../Components/BackButton";
 // Get the image through url (imgur)
 const button_BACK = { uri: "https://imgur.com/2zC4NGP.png" };
 const image = { uri: "https://i.imgur.com/NLwCJeA.png" };
