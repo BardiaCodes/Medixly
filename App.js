@@ -1,8 +1,8 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import Detect from "./Detect";
-import Results from "./Results";
-import PastResults from "./PastResults";
+import Detect from "./App/Screens/Detect";
+import Results from "./App/Screens/Results";
+import PastResults from "./App/Screens/PastResults";
 import * as firebase from "firebase";
 import { firebaseConfig } from "./config";
 import React from "react";
