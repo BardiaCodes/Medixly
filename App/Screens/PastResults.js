@@ -9,7 +9,8 @@ import {
   Dimensions,
   Image,
 } from "react-native";
-import PastResultsBar from "./App/Components/PastResultsBar";
+import PastResultsBar from "../Components/PastResultsBar";
+import Arrow from "../Components/BackButton";
 
 const button_BACK = { uri: "https://imgur.com/2zC4NGP.png" }; // Back button
 const bar_FILL = { uri: "https://imgur.com/Y7IFm2h.png" }; // Texture for filled part of bar
@@ -24,14 +25,15 @@ const TestScreen = () => {
   return (
     <View style={styles.container}>
       <ImageBackground source={BG} style={styles.image}>
-        <View style={styles.backView}>
-          <TouchableOpacity
-            onPress={() => alert("GOOOOOIN BACK!")}
-            style={styles.TOstyle}
-          >
-            <Image source={button_BACK} style={styles.backButton} />
-          </TouchableOpacity>
-        </View>
+        <Arrow
+          thickness={6}
+          size={10}
+          width={40}
+          height={25}
+          left={27}
+          top={10}
+          color="#418DFF"
+        ></Arrow>
 
         <View style={styles.barView}>
           <PastResultsBar />
@@ -46,14 +48,11 @@ const TestScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "flex-end",
   },
   image: {
     flex: 1,
     resizeMode: "cover",
-    justifyContent: "flex-start",
-    flexDirection: "column",
+    justifyContent: "center",
   },
   text: {
     color: "white",
@@ -79,8 +78,9 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    flex: 50,
   },
 });
 
 export default TestScreen;
+
+// arrow allows increased custombizability and reusability amongst components
