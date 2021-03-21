@@ -6,9 +6,13 @@ import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import HomeScreen from "./App/Screens/HomeScreen";
-import SigninScreen from "./App/Screens/SigninScreen";
+import SignInScreen from "./App/Screens/SigninScreen";
 import LoginScreen from "./App/Screens/LoginScreen";
 import ButtonwithBackgroundScreen from "./ButtonWithBackgroundScreen";
+import ResultsScreen from "./App/Screens/Results";
+import Detect from "./App/Screens/Detect";
+import PastResults from "./App/Screens/PastResults";
+import SignUpScreen from "./App/Screens/SignupScreen";
 
 const TabNavigator = createMaterialBottomTabNavigator(
 	// Different screen navigations
@@ -67,7 +71,52 @@ const TabNavigator = createMaterialBottomTabNavigator(
 						<Icon
 							style={[{ color: tintColor }]}
 							size={25}
-							name={"camera-outline"}
+							name={"detect-outline"}
+						/>
+					</View>
+				),
+			},
+		},
+		PastResults: {
+			screen: PastResults,
+			navigationOptions: {
+				tabBarLabel: "Past Results",
+				tabBarIcon: ({ tintColor }) => (
+					<View>
+						<Icon
+							style={[{ color: tintColor }]}
+							size={25}
+							name={"past-results-outline"}
+						/>
+					</View>
+				),
+			},
+		},
+		SignInScreen: {
+			screen: SignInScreen,
+			navigationOptions: {
+				tabBarLabel: "Sign in screen",
+				tabBarIcon: ({ tintColor }) => (
+					<View>
+						<Icon
+							style={[{ color: tintColor }]}
+							size={25}
+							name={"sign-in-screen-outline"}
+						/>
+					</View>
+				),
+			},
+		},
+		SignUpScreen: {
+			screen: SignUpScreen,
+			navigationOptions: {
+				tabBarLabel: "Sign in screen",
+				tabBarIcon: ({ tintColor }) => (
+					<View>
+						<Icon
+							style={[{ color: tintColor }]}
+							size={25}
+							name={"sign-in-screen-outline"}
 						/>
 					</View>
 				),
