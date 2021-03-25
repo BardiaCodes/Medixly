@@ -1,4 +1,5 @@
 import React from "react";
+import { AsyncStorage } from '@react-native-community/async-storage';
 import {
   ImageBackground,
   SafeAreaView,
@@ -10,6 +11,18 @@ import {
   Image,
 } from "react-native";
  import Arrow from "../Components/BackButton";
+
+ // async
+ const photoDetect = async () => {
+  try {
+    await AsyncStorage.setItem(
+      'Image',deteectimage);
+  } catch (error) {
+    alert(console.log)
+    // Error saving data
+  }
+};
+
 // Get the image through url (imgur)
 const button_BACK = { uri: "https://imgur.com/2zC4NGP.png" };
 const image = { uri: "https://i.imgur.com/NLwCJeA.png" };
@@ -34,7 +47,7 @@ function Detect(props) {
         <View style={styles.detectView}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => alert("Button pressed")}
+            onPress={() => alert("Button pressed") && photoDetect()}
           >
             <ImageBackground
               source={deteectimage}
