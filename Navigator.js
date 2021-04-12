@@ -8,7 +8,6 @@ import Icon from "react-native-vector-icons/Ionicons";
 import HomeScreen from "./App/Screens/HomeScreen";
 import SignInScreen from "./App/Screens/SigninScreen";
 import LoginScreen from "./App/Screens/LoginScreen";
-import ButtonwithBackgroundScreen from "./ButtonWithBackgroundScreen";
 import ResultsScreen from "./App/Screens/Results";
 import Detect from "./App/Screens/Detect";
 import PastResults from "./App/Screens/PastResults";
