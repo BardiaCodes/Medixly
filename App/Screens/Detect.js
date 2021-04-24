@@ -28,6 +28,46 @@ const button_BACK = { uri: "https://imgur.com/2zC4NGP.png" };
 const image = { uri: "https://i.imgur.com/NLwCJeA.png" };
 const deteectimage = { uri: "https://i.imgur.com/ntJM5VX.png" };
 const pastResultsButton = { uri: "https://i.imgur.com/fu1KbuH.png" };
+
+export default function ImagePickerExample() {
+  const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS !== 'web') {
+        const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (status !== 'granted') {
+          alert('Sorry, we need camera roll permissions to make this work!');
+        }
+      }
+    })();
+  }, []);
+
+  let [user, setUser] = useState(null);
+  let [NewImage, setNewImage] = useState(JSON.stringify(user));
+  let [result, setResult] = useState(null);
+
+  const pickImage = async () => {
+     setResult(await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    }));
+
+    console.log("Testing...");
+    console.log(result);
+    setuUser(result);
+    setNewImage(useState(JSON.stringify(user)));
+    //  AsyncStorage.setItem('user',newImages) 
+    console.log(AsyncStorage.getItem('user'));
+    console.log("Test end.");
+    if (!result.cancelled) {
+      setImage(result.uri);
+      AsyncStorage.setItem("user",result.uri)
+    }
+  };
+
 function Detect(props) {
   return (
     //Safe area view for Iphone's, contains all the information
@@ -65,6 +105,11 @@ function Detect(props) {
           </TouchableOpacity>
         </View>
       </ImageBackground>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Button title="Pick an image from camera roll" onPress={pickImage} />
+        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+        {image && <Image source={{ uri: AsyncStorage.getItem('user') }} style={{ width: 200, height: 200 }} />}
+      </View>
     </View>
   );
 }
@@ -111,4 +156,5 @@ const styles = StyleSheet.create({
 });
 export default Detect;
 
-// arrow for increased customizability
+//arrow for increased customizability
+}
