@@ -44,7 +44,7 @@ export default function ImagePickerExample() {
   }, []);
 
   let [user, setUser] = useState(null);
-  let [NewImage, setNewImage] = useState(JSON.stringify(user));
+  let [newImage, setNewImage] = useState(JSON.stringify(user));
   let [result, setResult] = useState(null);
 
   const pickImage = async () => {
