@@ -57,7 +57,6 @@ export default function ImagePickerExample() {
 
     console.log("Testing...");
     console.log(result);
-    setUser(result);
     setNewImage(JSON.stringify(user));
     //  AsyncStorage.setItem('user',newImages) 
     console.log(AsyncStorage.getItem('user'));
