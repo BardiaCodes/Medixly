@@ -43,7 +43,7 @@ export default function ImagePickerExample() {
     })();
   }, []);
 
-  let [user, setUser] = useState(null);
+  let [date, setDate] = useState(null);
   let [newImage, setNewImage] = useState(JSON.stringify(user));
   let [result, setResult] = useState(null);
 
@@ -64,7 +64,12 @@ export default function ImagePickerExample() {
     console.log("Test end.");
     if (!result.cancelled) {
       setImage(result.uri);
-      AsyncStorage.setItem("user",result.uri)
+      let today = new Date();
+      let dd = String(today.getDate()).padStart(2, '0');
+      let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      let yyyy = today.getFullYear();
+      setDate(mm+"/"+dd+"/"+yyyy);
+      AsyncStorage.setItem(date,result.uri)
     }
   };
 
