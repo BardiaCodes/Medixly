@@ -68,7 +68,10 @@ export default function ImagePickerExample() {
       let dd = String(today.getDate()).padStart(2, '0');
       let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
       let yyyy = today.getFullYear();
-      setDate(mm+"/"+dd+"/"+yyyy);
+      let hr = today.getHours();
+      let min = today.getMinutes().padStart(2,'0');
+      let s = today.getSeconds().padStart(2,'0');
+      setDate(mm+"/"+dd+"/"+yyyy+ " " + hr+":"+min+":"+s+(hr<12?"AM":"PM"));
       AsyncStorage.setItem(date,result.uri)
     }
   };
