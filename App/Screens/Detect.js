@@ -1,5 +1,5 @@
 import React from "react";
-import { AsyncStorage } from '@react-native-community/async-storage';
+import {useState} from 'react'
 import {
   ImageBackground,
   SafeAreaView,
@@ -11,71 +11,66 @@ import {
   Image,
 } from "react-native";
  import Arrow from "../Components/BackButton";
-
- // async
- const photoDetect = async () => {
-  try {
-    await AsyncStorage.setItem(
-      'Image',deteectimage);
-  } catch (error) {
-    alert(console.log)
-    // Error saving data
-  }
-};
-
 // Get the image through url (imgur)
 const button_BACK = { uri: "https://imgur.com/2zC4NGP.png" };
 const image = { uri: "https://i.imgur.com/NLwCJeA.png" };
 const deteectimage = { uri: "https://i.imgur.com/ntJM5VX.png" };
 const pastResultsButton = { uri: "https://i.imgur.com/fu1KbuH.png" };
 
-export default function ImagePickerExample() {
-  const [image, setImage] = useState(null);
+function Detect(props) {
+  let [image, setImage] = useState(null);
+  let [images, setImages] = useState(null);
 
-  useEffect(() => {
-    (async () => {
-      if (Platform.OS !== 'web') {
-        const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-        if (status !== 'granted') {
+  const requestPermissions = () => {
+    if (Platform.OS !== 'web') {
+      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== 'granted') {
           alert('Sorry, we need camera roll permissions to make this work!');
-        }
       }
-    })();
-  }, []);
+    }
+  };
 
-  let [date, setDate] = useState(null);
-  let [newImage, setNewImage] = useState(JSON.stringify(user));
-  let [result, setResult] = useState(null);
-
-  const pickImage = async () => {
-     setResult(await ImagePicker.launchImageLibraryAsync({
+  const pickStoreImage = async () => {
+    //pickImage
+    const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
-    }));
+    });
 
-    console.log("Testing...");
-    console.log(result);
-    setNewImage(JSON.stringify(user));
-    //  AsyncStorage.setItem('user',newImages) 
-    console.log(AsyncStorage.getItem('user'));
-    console.log("Test end.");
     if (!result.cancelled) {
       setImage(result.uri);
-      let today = new Date();
-      let dd = String(today.getDate()).padStart(2, '0');
-      let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-      let yyyy = today.getFullYear();
-      let hr = today.getHours();
-      let min = today.getMinutes().padStart(2,'0');
-      let s = today.getSeconds().padStart(2,'0');
-      setDate(mm+"/"+dd+"/"+yyyy+ " " + hr+":"+min+":"+s+(hr<12?"AM":"PM"));
-      AsyncStorage.setItem(date,result.uri)
     }
+
+    //store image
+    if (uri !== null) {
+      const timestamp = Date.now().toString();
+
+      const newImages = images;
+      newImages.push({ timestamp, uri });
+
+      console.log('old length: ' + images.length);
+      console.log('new length: ' + newImages.length);
+
+      setImages(newImages);
+
+      await AsyncStorage.setItem('images', JSON.stringify(newImages));
+    }
+  }
+
+  const getImages = async () => {
+    const arrayString = await AsyncStorage.getItem('images');
+
+    let array = JSON.parse(arrayString);
+
+    if (array === null) {
+        array = [];
+    } 
+
+    setImages(array);
   };
 
-function Detect(props) {
   return (
     //Safe area view for Iphone's, contains all the information
 
@@ -94,7 +89,7 @@ function Detect(props) {
         <View style={styles.detectView}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => alert("Button pressed") && photoDetect()}
+            onPress={requestPermissions && pickStoreImage && getImages}
           >
             <ImageBackground
               source={deteectimage}
@@ -112,14 +107,10 @@ function Detect(props) {
           </TouchableOpacity>
         </View>
       </ImageBackground>
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Button title="Pick an image from camera roll" onPress={pickImage} />
-        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
-        {image && <Image source={{ uri: AsyncStorage.getItem('user') }} style={{ width: 200, height: 200 }} />}
-      </View>
     </View>
   );
 }
+
 const win = Dimensions.get("window");
 const height = win.height;
 const width = win.width;
@@ -163,5 +154,4 @@ const styles = StyleSheet.create({
 });
 export default Detect;
 
-//arrow for increased customizability
-}
+// arrow for increased customizability

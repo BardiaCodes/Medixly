@@ -5,10 +5,22 @@ const styles = StyleSheet.create({
 
 });
 
+const Item = ({ title }) => (
+    <View style={styles.item}>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
+
 export default function PreviousImages() {
+    let [data, setData] = useState([]);
+    
+    const renderItem = ({ item }) => (
+        <Item title={item.title} />
+    );
+
     return (
-        <SafeAreaView>
-            <FlatList/>
+        <SafeAreaView style={styles.container}>
+            <FlatList data={data} renderItem={renderItem}/>
         </SafeAreaView>
     );
 }
