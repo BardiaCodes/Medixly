@@ -19,7 +19,7 @@ const pastResultsButton = { uri: "https://i.imgur.com/fu1KbuH.png" };
 
 function Detect(props) {
   let [image, setImage] = useState(null);
-  let [images, setImages] = useState(null);
+  let [images, setImages] = useState(null)
 
   const requestPermissions = () => {
     if (Platform.OS !== 'web') {
@@ -58,18 +58,6 @@ function Detect(props) {
       await AsyncStorage.setItem('images', JSON.stringify(newImages));
     }
   }
-
-  const getImages = async () => {
-    const arrayString = await AsyncStorage.getItem('images');
-
-    let array = JSON.parse(arrayString);
-
-    if (array === null) {
-        array = [];
-    } 
-
-    setImages(array);
-  };
 
   return (
     //Safe area view for Iphone's, contains all the information
