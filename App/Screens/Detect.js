@@ -1,5 +1,5 @@
 import React from "react";
-import { AsyncStorage } from '@react-native-community/async-storage';
+import {useState} from 'react'
 import {
   ImageBackground,
   SafeAreaView,
@@ -11,24 +11,54 @@ import {
   Image,
 } from "react-native";
  import Arrow from "../Components/BackButton";
-
- // async
- const photoDetect = async () => {
-  try {
-    await AsyncStorage.setItem(
-      'Image',deteectimage);
-  } catch (error) {
-    alert(console.log)
-    // Error saving data
-  }
-};
-
 // Get the image through url (imgur)
 const button_BACK = { uri: "https://imgur.com/2zC4NGP.png" };
 const image = { uri: "https://i.imgur.com/NLwCJeA.png" };
 const deteectimage = { uri: "https://i.imgur.com/ntJM5VX.png" };
 const pastResultsButton = { uri: "https://i.imgur.com/fu1KbuH.png" };
+
 function Detect(props) {
+  let [image, setImage] = useState(null);
+  let [images, setImages] = useState(null)
+
+  const requestPermissions = () => {
+    if (Platform.OS !== 'web') {
+      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== 'granted') {
+          alert('Sorry, we need camera roll permissions to make this work!');
+      }
+    }
+  };
+
+  const pickStoreImage = async () => {
+    //pickImage
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!result.cancelled) {
+      setImage(result.uri);
+    }
+
+    //store image
+    if (uri !== null) {
+      const timestamp = Date.now().toString();
+
+      const newImages = images;
+      newImages.push({ timestamp, uri });
+
+      console.log('old length: ' + images.length);
+      console.log('new length: ' + newImages.length);
+
+      setImages(newImages);
+
+      await AsyncStorage.setItem('images', JSON.stringify(newImages));
+    }
+  }
+
   return (
     //Safe area view for Iphone's, contains all the information
 
@@ -47,7 +77,7 @@ function Detect(props) {
         <View style={styles.detectView}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => alert("Button pressed") && photoDetect()}
+            onPress={requestPermissions && pickStoreImage && getImages}
           >
             <ImageBackground
               source={deteectimage}
@@ -68,6 +98,7 @@ function Detect(props) {
     </View>
   );
 }
+
 const win = Dimensions.get("window");
 const height = win.height;
 const width = win.width;
