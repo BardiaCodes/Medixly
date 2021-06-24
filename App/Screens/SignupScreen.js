@@ -20,7 +20,7 @@ export default function App() {
 		<View style={styles.container}>
 			<View style={styles.heading}>
 				<Image
-					source={require("../../assets/medixlylogo.png")}
+					source={require("./assets/medixlylogo.png")}
 					style={styles.logo}
 				/>
 				<Text style={styles.SignUpHeader}>Sign Up</Text>
@@ -173,4 +173,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-// export default SignUpScreen;
+export default SignUpScreen;

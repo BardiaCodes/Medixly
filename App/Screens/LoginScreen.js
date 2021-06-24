@@ -5,7 +5,7 @@ export default function signInSignUp() {
   console.log("App executed");
   return (
     <View style={styles.container}>
-      <Image style={styles.background} source={require('../assets/background.png')} />
+      <Image style={styles.background} source={require('./assets/background.png')} />
       <Text style={styles.title}>
         Medixly
       </Text>
